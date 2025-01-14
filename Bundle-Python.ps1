@@ -47,6 +47,8 @@ if ($null -eq (Get-Command "python.exe" -ErrorAction SilentlyContinue))  {
 }
 
 mkdir ${PythonDirectory}\Lib\venv\scripts\nt
+Copy-Item ${PythonVenvScripts}\activate.bat ${PythonDirectory}\Lib\venv\scripts\nt
+Copy-Item ${PythonVenvScripts}\deactivate.bat ${PythonDirectory}\Lib\venv\scripts\nt
 Copy-Item ${PythonVenvScripts}\python.exe ${PythonDirectory}\Lib\venv\scripts\nt
 Copy-Item ${PythonVenvScripts}\pythonw.exe ${PythonDirectory}\Lib\venv\scripts\nt
 Copy-Item ${VenvScripts}\__init__.py ${PythonDirectory}\Lib\venv\
